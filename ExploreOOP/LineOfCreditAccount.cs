@@ -8,7 +8,15 @@ namespace ExploreOOP
 {
     public class LineOfCreditAccount : BankAccount
     {
-        public LineOfCreditAccount(string name, decimal initialBalance, decimal creditLimit) : base(name, initialBalance, -creditLimit)
+        public LineOfCreditAccount(string name, decimal initialBalance, decimal creditLimit, IAuthorizationSystemService authorizationSystemService) 
+            : base(name, initialBalance, -creditLimit, authorizationSystemService)
+        {
+        }
+
+
+        //Dependency Non-Injection
+        public LineOfCreditAccount(string name, decimal initialBalance, decimal creditLimit)
+            : base(name, initialBalance, -creditLimit, new AuthorizationSystemService())
         {
         }
 

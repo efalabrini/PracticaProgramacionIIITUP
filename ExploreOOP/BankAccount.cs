@@ -11,6 +11,8 @@ namespace ExploreOOP
         private static int s_accountNumberSeed = 1234567890;
 
         private readonly decimal _minimumBalance;
+
+        private readonly IAuthorizationSystemService? _authorizationSystemService;
         public string Number { get; }
         public string Owner { get; set; }
         public decimal Balance 
@@ -28,6 +30,13 @@ namespace ExploreOOP
         }
 
         public BankAccount(string name, decimal initialBalance) : this(name, initialBalance, 0) { }
+
+        //Dependency Injection example constructor
+        public BankAccount(string name, decimal initialBalance, decimal minimumBalance, IAuthorizationSystemService? authorizationSystemService) 
+            : this (name,initialBalance,minimumBalance)
+        {
+            _authorizationSystemService = authorizationSystemService;
+        }
 
         public BankAccount(string name, decimal initialBalance, decimal minimumBalance)
         {
@@ -57,6 +66,12 @@ namespace ExploreOOP
             {
                 throw new ArgumentOutOfRangeException(nameof(amount), "Amount of withdrawal must be positive");
             }
+
+            if (_authorizationSystemService != null)
+            {
+                _authorizationSystemService.AuthorizeTransaction();
+            }  
+
             Transaction? overdraftTransaction = CheckWithdrawalLimit(Balance - amount < _minimumBalance);
             Transaction? withdrawal = new(-amount, date, note);
             _allTransactions.Add(withdrawal);
