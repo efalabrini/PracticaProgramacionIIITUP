@@ -4,8 +4,11 @@ namespace DIExample
 {
     public class Worker : BackgroundService
 {
-    private readonly MessageWriter _messageWriter = new MessageWriter();
+    //private readonly MessageWriter _messageWriter = new MessageWriter();
+    private readonly IMessageWriter _messageWriter;
 
+    public Worker(IMessageWriter messageWriter) =>
+        _messageWriter = messageWriter;
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         while (!stoppingToken.IsCancellationRequested)
