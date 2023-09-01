@@ -11,6 +11,8 @@ namespace ExploreOOP
         private static int s_accountNumberSeed = 1234567890;
 
         private readonly decimal _minimumBalance;
+
+        private readonly IAuthorizationSystemService? _authorizationSystemService;
         public string Number { get; }
         public string Owner { get; set; }
         public decimal Balance 
@@ -29,7 +31,7 @@ namespace ExploreOOP
 
         public BankAccount(string name, decimal initialBalance) : this(name, initialBalance, 0) { }
 
-        public BankAccount(string name, decimal initialBalance, decimal minimumBalance)
+        public BankAccount(string name, decimal initialBalance, decimal minimumBalance, IAuthorizationSystemService? authorizationSystemService = null)
         {
             Number = s_accountNumberSeed.ToString();
             s_accountNumberSeed++;
@@ -38,6 +40,8 @@ namespace ExploreOOP
             _minimumBalance = minimumBalance;
             if (initialBalance > 0)
                 MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
+            
+            _authorizationSystemService = authorizationSystemService;
         }
 
         private List<Transaction> _allTransactions = new List<Transaction>();
@@ -57,6 +61,12 @@ namespace ExploreOOP
             {
                 throw new ArgumentOutOfRangeException(nameof(amount), "Amount of withdrawal must be positive");
             }
+
+            if (_authorizationSystemService != null)
+            {
+                _authorizationSystemService.AuthorizeTransaction();
+            }  
+
             Transaction? overdraftTransaction = CheckWithdrawalLimit(Balance - amount < _minimumBalance);
             Transaction? withdrawal = new(-amount, date, note);
             _allTransactions.Add(withdrawal);
