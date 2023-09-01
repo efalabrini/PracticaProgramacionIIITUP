@@ -12,7 +12,7 @@ namespace ExploreOOP
         {
             //To do: AI validations
 
-            Console.WriteLine("Transaction approved by a AI system");
+            Console.WriteLine("Transaction approved by an AI system");
         }
     }
 }

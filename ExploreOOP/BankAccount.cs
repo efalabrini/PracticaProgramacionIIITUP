@@ -31,14 +31,7 @@ namespace ExploreOOP
 
         public BankAccount(string name, decimal initialBalance) : this(name, initialBalance, 0) { }
 
-        //Dependency Injection example constructor
-        public BankAccount(string name, decimal initialBalance, decimal minimumBalance, IAuthorizationSystemService? authorizationSystemService) 
-            : this (name,initialBalance,minimumBalance)
-        {
-            _authorizationSystemService = authorizationSystemService;
-        }
-
-        public BankAccount(string name, decimal initialBalance, decimal minimumBalance)
+        public BankAccount(string name, decimal initialBalance, decimal minimumBalance, IAuthorizationSystemService? authorizationSystemService = null)
         {
             Number = s_accountNumberSeed.ToString();
             s_accountNumberSeed++;
@@ -47,6 +40,8 @@ namespace ExploreOOP
             _minimumBalance = minimumBalance;
             if (initialBalance > 0)
                 MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
+            
+            _authorizationSystemService = authorizationSystemService;
         }
 
         private List<Transaction> _allTransactions = new List<Transaction>();
