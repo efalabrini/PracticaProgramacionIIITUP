@@ -8,7 +8,7 @@ namespace ExploreOOP
 {
     public class AuthorizationSystemService : IAuthorizationSystemService
     {
-        public void AuthorizeTransaction()
+        public void AuthorizeTransaction(Transaction transaction)
         {
             //To do: AI validations
 
