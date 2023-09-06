@@ -8,7 +8,7 @@ namespace ExploreOOP
 {
     public interface IAuthorizationSystemService
     {
-        public void AuthorizeTransaction();
+        public void AuthorizeTransaction(Transaction transaction);
 
     }
 }
