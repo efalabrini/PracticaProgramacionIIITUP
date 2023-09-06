@@ -62,13 +62,12 @@ namespace ExploreOOP
                 throw new ArgumentOutOfRangeException(nameof(amount), "Amount of withdrawal must be positive");
             }
 
-            if (_authorizationSystemService != null)
-            {
-                _authorizationSystemService.AuthorizeTransaction();
-            }  
-
             Transaction? overdraftTransaction = CheckWithdrawalLimit(Balance - amount < _minimumBalance);
             Transaction? withdrawal = new(-amount, date, note);
+            if (_authorizationSystemService != null)
+            {
+                _authorizationSystemService.AuthorizeTransaction(withdrawal);
+            }  
             _allTransactions.Add(withdrawal);
             if (overdraftTransaction != null)
                 _allTransactions.Add(overdraftTransaction);

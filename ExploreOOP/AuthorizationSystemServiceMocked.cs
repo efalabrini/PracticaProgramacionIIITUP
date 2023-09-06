@@ -8,9 +8,9 @@ namespace ExploreOOP
 {
     public class AuthorizationSystemServiceMocked : IAuthorizationSystemService
     {
-        public void AuthorizeTransaction()
+        public void AuthorizeTransaction(Transaction transaction)
         {
-            Console.WriteLine("Transaction approved by mocked system");
+            Console.WriteLine($"{transaction.Amount} USD Transaction approved by mocked system ");
         }
     }
 }
