@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExploreOOP.src.BusinessLayer.Interfaces;
+using ExploreOOP.src.BusinessLayer.Services;
 
-namespace ExploreOOP
+namespace ExploreOOP.src.BusinessLayer.Entities
 {
     public class LineOfCreditAccount : BankAccount
     {
         //Dependency Injection constructor
-        public LineOfCreditAccount(string name, decimal initialBalance, decimal creditLimit, IAuthorizationSystemService authorizationSystemService) 
+        public LineOfCreditAccount(string name, decimal initialBalance, decimal creditLimit, IAuthorizationSystemService authorizationSystemService)
             : base(name, initialBalance, -creditLimit, authorizationSystemService)
         {
         }

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExploreOOP.src.BusinessLayer.Interfaces;
 
-namespace ExploreOOP
+namespace ExploreOOP.src.BusinessLayer.Entities
 {
     public class BankAccount
     {
@@ -15,7 +16,7 @@ namespace ExploreOOP
         private readonly IAuthorizationSystemService? _authorizationSystemService;
         public string Number { get; }
         public string Owner { get; set; }
-        public decimal Balance 
+        public decimal Balance
         {
             get
             {
@@ -40,7 +41,7 @@ namespace ExploreOOP
             _minimumBalance = minimumBalance;
             if (initialBalance > 0)
                 MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
-            
+
             _authorizationSystemService = authorizationSystemService;
         }
 
@@ -67,7 +68,7 @@ namespace ExploreOOP
             if (_authorizationSystemService != null)
             {
                 _authorizationSystemService.AuthorizeTransaction(withdrawal);
-            }  
+            }
             _allTransactions.Add(withdrawal);
             if (overdraftTransaction != null)
                 _allTransactions.Add(overdraftTransaction);
@@ -87,7 +88,7 @@ namespace ExploreOOP
 
         public string GetAccountHistory()
         {
-            var report = new System.Text.StringBuilder();
+            var report = new StringBuilder();
 
             decimal balance = 0;
             report.AppendLine("Date\t\tAmount\tBalance\tNote");

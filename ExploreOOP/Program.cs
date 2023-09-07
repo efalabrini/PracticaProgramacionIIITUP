@@ -1,5 +1,11 @@
 ﻿using ExploreOOP;
+using ExploreOOP.src.BusinessLayer.Entities;
+using ExploreOOP.src.BusinessLayer.Services;
+using ExploreOOP.src.PresentationLayer;
 
+MainMenuUI.Display();
+
+/*
 var giftCard = new GiftCardAccount("gift card", 100, 50);
 giftCard.MakeWithdrawal(20, DateTime.Now, "get expensive coffee");
 giftCard.MakeWithdrawal(50, DateTime.Now, "buy groceries");
@@ -26,3 +32,4 @@ lineOfCredit.MakeWithdrawal(5000m, DateTime.Now, "Emergency funds for repairs");
 lineOfCredit.MakeDeposit(150m, DateTime.Now, "Partial restoration on repairs");
 lineOfCredit.PerformMonthEndTransactions();
 Console.WriteLine(lineOfCredit.GetAccountHistory());
+*/
