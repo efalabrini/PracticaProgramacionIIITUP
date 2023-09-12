@@ -8,7 +8,7 @@ namespace Practica2.Ej4
 {
     public abstract class Personaje : IMoverse
     {
-        public string Nombre { get; set; }
+        public string? Nombre { get; set; }
 
         public int Fuerza { get; set; }
 
