@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ej5
+namespace Practica2.Ej5
 {
     internal interface IVehiculo
     {
         void Conducir();
 
         bool CargarCombustible(int cantCombustible);
-        
+
     }
 }

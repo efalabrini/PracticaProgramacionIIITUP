@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ej5
+namespace Practica2.Ej5
 {
-    internal class Coche:IVehiculo
+    internal class Coche : IVehiculo
     {
         protected int combustible;
 
         public Coche(int combInicial)
         {
-            combustible=combInicial;
+            combustible = combInicial;
         }
 
         public void Conducir()
@@ -33,8 +33,8 @@ namespace Ej5
             combustible += cantCombustible;
             Console.WriteLine($"combustible actual {combustible} litros");
             return true;
-         
+
         }
-       
+
     }
 }
