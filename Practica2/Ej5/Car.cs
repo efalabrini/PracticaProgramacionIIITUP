@@ -8,15 +8,15 @@ namespace Practica2.Ej5
 {
     internal class Car : IVehicle
     {
-        public int fuelCar;
+        protected int _fuelCar;
         public Car(int fuelCar) 
         {
-            this.fuelCar = fuelCar;
+            this._fuelCar = fuelCar;
         }
 
         public void Drive()
         {
-            if (fuelCar > 0)
+            if (_fuelCar > 0)
             {
                 Console.WriteLine("El coche esta siendo conducido!");
             }
@@ -28,7 +28,7 @@ namespace Practica2.Ej5
 
         public bool LoadFuel(int fuel)
         {
-            fuelCar += fuel; 
+            _fuelCar += fuel; 
             return true;
         }
     }

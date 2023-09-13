@@ -10,8 +10,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Services
 {
-    public class LineOfCreditAccountService
+    public class LineOfCreditAccountService 
     {
+
         ILineOfCreditAccountRepository _lineOfCreditAccountRepository;
 
         public LineOfCreditAccountService(ILineOfCreditAccountRepository lineOfCreditAccountRepository)

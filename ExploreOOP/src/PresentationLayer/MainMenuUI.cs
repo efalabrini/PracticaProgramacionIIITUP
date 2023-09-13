@@ -36,7 +36,7 @@ namespace ExploreOOP.src.PresentationLayer
 
                         foreach (var item in lista)
                         {
-                            Console.WriteLine($"Account {item.Owner} Balance {item.Balance}" );
+                            Console.WriteLine($"Account ID: {item.Number} Account {item.Owner} Balance {item.Balance}" );
                         }
 
                         PrintPressToContinue();
