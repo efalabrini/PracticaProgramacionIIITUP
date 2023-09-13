@@ -56,7 +56,20 @@ namespace ExploreOOP.src.PresentationLayer
 
                         break;
 
+                    case 3:
+                        Console.WriteLine("Find a line of credit account by ID");
+                        Console.WriteLine("Type your ID: ");
+                        int searchID = Convert.ToInt32(Console.ReadLine());
+                        lineOfCreditAccountService.Get(searchID);
 
+                        break;
+                    case 4:
+                        Console.WriteLine("Delete a line of credit account");
+                        Console.WriteLine("Type your ID: ");
+                        int searchID = Convert.ToInt32(Console.ReadLine());
+                        lineOfCreditAccountService.Delete(searchID);
+
+                        break;
                 }
 
             } while (option != 0);
