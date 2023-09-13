@@ -17,10 +17,12 @@ namespace ExploreOOP.src.BusinessLayer.Entities
         }
 
         //Dependency Non-Injection constructor
+        /*
         public LineOfCreditAccount(string name, decimal initialBalance, decimal creditLimit)
             : base(name, initialBalance, -creditLimit, new AuthorizationSystemService())
         {
         }
+        */
 
         public override void PerformMonthEndTransactions()
         {

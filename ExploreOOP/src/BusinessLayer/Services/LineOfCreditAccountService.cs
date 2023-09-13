@@ -6,11 +6,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExploreOOP.src.BusinessLayer.Interfaces;
 
 
 namespace BusinessLayer.Services
 {
-    public class LineOfCreditAccountService
+    public class LineOfCreditAccountService : ExploreOOP.src.BusinessLayer.Interfaces.ILineOfCreditAccountService
     {
         ILineOfCreditAccountRepository _lineOfCreditAccountRepository;
 
@@ -28,5 +29,16 @@ namespace BusinessLayer.Services
         {
             _lineOfCreditAccountRepository.Add(lineOfCreditAccount);
         }
+
+        public LineOfCreditAccount Get(int id)
+        {
+            return _lineOfCreditAccountRepository.Get(id);
+        }
+
+        public void Delete(int id)
+        {
+            _lineOfCreditAccountRepository.Delete(id);
+        }
+
     }
 }

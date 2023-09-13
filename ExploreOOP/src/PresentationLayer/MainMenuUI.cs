@@ -36,7 +36,7 @@ namespace ExploreOOP.src.PresentationLayer
 
                         foreach (var item in lista)
                         {
-                            Console.WriteLine($"Account {item.Owner} Balance {item.Balance}" );
+                            Console.WriteLine($"Account ID: {item.Number} Account {item.Owner} Balance {item.Balance}" );
                         }
 
                         PrintPressToContinue();
@@ -50,10 +50,32 @@ namespace ExploreOOP.src.PresentationLayer
                         Console.Write("Enter credit limit: ");
                         decimal.TryParse(Console.ReadLine(), out creditLimit);
 
-                        LineOfCreditAccount l = new(name, 0, creditLimit);
+                        LineOfCreditAccount l = new(name, 0, creditLimit,null);
                         lineOfCreditAccountService.Add(l);
 
+                        Console.WriteLine($"Account added" );
+                        PrintPressToContinue();
 
+                        break;
+                    
+                    case 3:
+                        Console.Write("Enter account id: ");
+                        var id = int.Parse(Console.ReadLine() ?? "0");
+
+                        l = lineOfCreditAccountService.Get(id);
+
+                        Console.WriteLine($"Account ID: {l.Number} Account {l.Owner} Balance {l.Balance}" );
+                        PrintPressToContinue();
+                        break;
+
+                    case 4:
+                        Console.Write("Enter account id: ");
+                        id = int.Parse(Console.ReadLine() ?? "0");
+
+                        lineOfCreditAccountService.Delete(id);
+
+                        Console.WriteLine($"Account {id} deleted" );
+                        PrintPressToContinue();
                         break;
 
 
@@ -74,6 +96,10 @@ namespace ExploreOOP.src.PresentationLayer
             Console.WriteLine("     1 - List all Line of credit accounts");
             Console.WriteLine("");
             Console.WriteLine("     2 - Add a Line of credit account");
+            Console.WriteLine("");
+            Console.WriteLine("     3 - Find a line of credit account by ID");
+            Console.WriteLine("");
+            Console.WriteLine("     4 - Delete a line of credit account");
             Console.WriteLine("");
             Console.WriteLine("     0 - Exit program");
             Console.WriteLine("");
