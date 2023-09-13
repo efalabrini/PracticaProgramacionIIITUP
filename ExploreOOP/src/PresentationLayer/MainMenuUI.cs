@@ -2,6 +2,7 @@
 using ExploreOOP.src.BusinessLayer.Entities;
 using PersistenceLayer;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -56,12 +57,50 @@ namespace ExploreOOP.src.PresentationLayer
 
                         break;
 
+                    case 3:
+                        Console.WriteLine("Ingrese el numero de cuenta a buscar");
+                        var id = Console.ReadLine() ?? "";
+                        var List2 = lineOfCreditAccountService.GetAll();
+                        var cuentaBuscar = List2.FirstOrDefault(x => x.Number == id);
 
+                        if(cuentaBuscar != null)
+                        {
+                            Console.WriteLine("Se ha encontrado la cuenta!");
+                            Console.WriteLine($"Owner: {cuentaBuscar.Owner}");
+                            Console.WriteLine($"Account ID: {cuentaBuscar.Number}");
+                            Console.WriteLine($"Balance: {cuentaBuscar.Balance}");
+                            
+                        }
+                        else
+                        {
+                            Console.WriteLine("No se ha encontrado la cuenta");
+                        }
+                       PrintPressToContinue();
+                        break;
+                    case 4:
+                        Console.WriteLine("Ingrese el número de cuenta a eliminar");
+                        string numeroEliminar = Console.ReadLine() ?? "";
+
+                        var List3 = lineOfCreditAccountService.GetAll();
+                        var cuentaEliminar = List3.FirstOrDefault(x => x.Number == numeroEliminar);
+
+                        if (cuentaEliminar != null)
+                        {
+                            Console.WriteLine($"Se ha eliminado la cuenta {cuentaEliminar.Number}");
+                            int idToDelete = int.Parse(cuentaEliminar.Number);
+                            lineOfCreditAccountService.Delete(idToDelete);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Cuenta no encontrada");
+                        }
+                        PrintPressToContinue();
+                        break;
                 }
 
             } while (option != 0);
 
-           
+            
 
         }
 
@@ -74,6 +113,10 @@ namespace ExploreOOP.src.PresentationLayer
             Console.WriteLine("     1 - List all Line of credit accounts");
             Console.WriteLine("");
             Console.WriteLine("     2 - Add a Line of credit account");
+            Console.WriteLine("");
+            Console.WriteLine("     3 - Search a Line of credit account");
+            Console.WriteLine("");
+            Console.WriteLine("     4 - Delete a Line of credit account");
             Console.WriteLine("");
             Console.WriteLine("     0 - Exit program");
             Console.WriteLine("");
