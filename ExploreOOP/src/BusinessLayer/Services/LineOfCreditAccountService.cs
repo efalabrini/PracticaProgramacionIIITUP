@@ -28,5 +28,15 @@ namespace BusinessLayer.Services
         {
             _lineOfCreditAccountRepository.Add(lineOfCreditAccount);
         }
+
+        public LineOfCreditAccount Get(int id)
+        {
+            return _lineOfCreditAccountRepository.Get(id);
+        }
+
+        public void Delete(int id)
+        {
+            _lineOfCreditAccountRepository.Delete(id);
+        }
     }
 }

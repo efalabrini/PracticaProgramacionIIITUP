@@ -16,7 +16,6 @@ namespace PersistenceLayer
         void Add(LineOfCreditAccount lineOfCreditAccount);
 
         void Delete(int id);
-
-
+        LineOfCreditAccount Add(int lineOfCreditAccount);
     }
 }
