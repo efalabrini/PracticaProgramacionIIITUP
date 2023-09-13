@@ -20,7 +20,7 @@ namespace ExploreOOP.src.PresentationLayer
             {
                 PrintMenu();
                 Console.WriteLine("Select an option:");
-                int.TryParse(Console.ReadLine(),out option);
+                int.TryParse(Console.ReadLine(), out option);
 
                 switch (option)
                 {
@@ -31,12 +31,12 @@ namespace ExploreOOP.src.PresentationLayer
 
                     case 1:
                         Console.Clear();
-                        
+
                         var lista = lineOfCreditAccountService.GetAll();
 
                         foreach (var item in lista)
                         {
-                            Console.WriteLine($"Account ID: {item.Number} {item.Owner} Balance {item.Balance}" );
+                            Console.WriteLine($"Account ID: {item.Number} {item.Owner} Balance {item.Balance}");
                         }
 
                         PrintPressToContinue();
@@ -61,7 +61,7 @@ namespace ExploreOOP.src.PresentationLayer
 
             } while (option != 0);
 
-           
+
 
         }
 
