@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Ej5\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Ej5\" />
+  </ItemGroup>
 </Project>
