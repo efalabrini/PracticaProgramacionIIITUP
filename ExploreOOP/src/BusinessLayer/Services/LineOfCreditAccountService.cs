@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Services
 {
-    public class LineOfCreditAccountService
+    public class LineOfCreditAccountService : ILineOfCreditAccountService
     {
         ILineOfCreditAccountRepository _lineOfCreditAccountRepository;
 
@@ -18,6 +18,18 @@ namespace BusinessLayer.Services
         {
             _lineOfCreditAccountRepository = lineOfCreditAccountRepository;
         }
+
+        public LineOfCreditAccount Get(int id)
+        {
+            return _lineOfCreditAccountRepository.Get(id);
+        }
+
+
+        public void Delete(int id)
+        {
+            _lineOfCreditAccountRepository.Delete(id);
+        }
+
 
         public List<LineOfCreditAccount> GetAll()
         {
