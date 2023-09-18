@@ -1,7 +1,7 @@
 ﻿using ExploreOOP;
-using ExploreOOP.src.BusinessLayer.Entities;
-using ExploreOOP.src.BusinessLayer.Services;
-using ExploreOOP.src.PresentationLayer;
+using ExploreOOP.BusinessLayer.Entities;
+using ExploreOOP.BusinessLayer.Services;
+using ExploreOOP.PresentationLayer;
 
 MainMenuUI.Display();
 

@@ -1,14 +1,13 @@
 ﻿
-using ExploreOOP.src.BusinessLayer.Entities;
-using PersistenceLayer;
+using ExploreOOP.BusinessLayer.Entities;
+using ExploreOOP.PersistenceLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace BusinessLayer.Services
+namespace ExploreOOP.BusinessLayer.Services
 {
     public class LineOfCreditAccountService : ILineOfCreditAccountService
     {

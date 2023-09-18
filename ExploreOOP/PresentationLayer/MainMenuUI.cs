@@ -1,13 +1,13 @@
-﻿using BusinessLayer.Services;
-using ExploreOOP.src.BusinessLayer.Entities;
-using PersistenceLayer;
+﻿using ExploreOOP.BusinessLayer.Services;
+using ExploreOOP.BusinessLayer.Entities;
+using ExploreOOP.PersistenceLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExploreOOP.src.PresentationLayer
+namespace ExploreOOP.PresentationLayer
 {
     public static class MainMenuUI
     {

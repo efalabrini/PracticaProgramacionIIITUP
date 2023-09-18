@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExploreOOP.src.BusinessLayer.Interfaces;
-using ExploreOOP.src.BusinessLayer.Services;
+using ExploreOOP.BusinessLayer.Interfaces;
+using ExploreOOP.BusinessLayer.Services;
 
-namespace ExploreOOP.src.BusinessLayer.Entities
+namespace ExploreOOP.BusinessLayer.Entities
 {
     public class LineOfCreditAccount : BankAccount
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExploreOOP.src.BusinessLayer.Entities;
+using ExploreOOP.BusinessLayer.Entities;
 
-namespace ExploreOOP.src.BusinessLayer.Interfaces
+namespace ExploreOOP.BusinessLayer.Interfaces
 {
     public interface IAuthorizationSystemService
     {

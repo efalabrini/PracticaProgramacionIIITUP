@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExploreOOP.src.BusinessLayer.Interfaces;
+using ExploreOOP.BusinessLayer.Interfaces;
 
-namespace ExploreOOP.src.BusinessLayer.Entities
+namespace ExploreOOP.BusinessLayer.Entities
 {
     public class BankAccount
     {

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExploreOOP.src.BusinessLayer.Entities;
-using ExploreOOP.src.BusinessLayer.Interfaces;
+using ExploreOOP.BusinessLayer.Entities;
+using ExploreOOP.BusinessLayer.Interfaces;
 
-namespace ExploreOOP.src.BusinessLayer.Services
+namespace ExploreOOP.BusinessLayer.Services
 {
     public class AuthorizationSystemService : IAuthorizationSystemService
     {

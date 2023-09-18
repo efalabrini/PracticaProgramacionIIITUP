@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExploreOOP.src.BusinessLayer.Entities
+namespace ExploreOOP.BusinessLayer.Entities
 {
     public class InterestEarningAccount : BankAccount
     {

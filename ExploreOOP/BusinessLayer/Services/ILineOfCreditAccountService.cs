@@ -1,6 +1,6 @@
-﻿using ExploreOOP.src.BusinessLayer.Entities;
+﻿using ExploreOOP.BusinessLayer.Entities;
 
-namespace BusinessLayer.Services
+namespace ExploreOOP.BusinessLayer.Services
 {
     public interface ILineOfCreditAccountService
     {
