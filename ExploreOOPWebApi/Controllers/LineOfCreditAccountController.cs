@@ -30,11 +30,9 @@ public class LineOfCreditAccountController : ControllerBase
     }
 
     [HttpPost]
-    public void Add([FromBody] LineOfCreditAccount lineOfCreditAccount)
+    public void Add([FromBody] CreateLineOfCreditAccount createLineOfCreditAccount)
     {
-        _lineOfCreditAccountService.Add(lineOfCreditAccount);
+        _lineOfCreditAccountService.Create(createLineOfCreditAccount);
     }
-
-    
 
 }
