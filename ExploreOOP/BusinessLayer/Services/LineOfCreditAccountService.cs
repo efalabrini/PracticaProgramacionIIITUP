@@ -39,5 +39,17 @@ namespace ExploreOOP.BusinessLayer.Services
         {
             _lineOfCreditAccountRepository.Add(lineOfCreditAccount);
         }
+
+        public void Create(CreateLineOfCreditAccount createLineOfCreditAccount)
+        {
+            LineOfCreditAccount lineOfCreditAccount = new(
+                createLineOfCreditAccount.Name,
+                createLineOfCreditAccount.InitialBalance,
+                createLineOfCreditAccount.CreditLimit,
+                null);
+            
+            this.Add(lineOfCreditAccount);
+        }
+
     }
 }

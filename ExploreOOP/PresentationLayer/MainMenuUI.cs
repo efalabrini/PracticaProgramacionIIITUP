@@ -50,10 +50,14 @@ namespace ExploreOOP.PresentationLayer
                         Console.Write("Enter credit limit: ");
                         decimal.TryParse(Console.ReadLine(), out creditLimit);
 
-                        LineOfCreditAccount l = new(name, 0, creditLimit);
-                        lineOfCreditAccountService.Add(l);
+                        CreateLineOfCreditAccount createLineOfCreditAccount = new()
+                        {
+                            Name = name,
+                            InitialBalance = 0,
+                            CreditLimit = 0
+                        };
 
-
+                        lineOfCreditAccountService.Create(createLineOfCreditAccount);
                         break;
 
 

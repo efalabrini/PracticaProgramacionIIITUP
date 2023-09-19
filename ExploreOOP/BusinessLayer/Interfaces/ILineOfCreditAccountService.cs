@@ -8,5 +8,6 @@ namespace ExploreOOP.BusinessLayer.Services
         void Delete(int id);
         LineOfCreditAccount Get(int id);
         List<LineOfCreditAccount> GetAll();
+        void Create(CreateLineOfCreditAccount createLineOfCreditAccount);
     }
 }
