@@ -10,15 +10,9 @@ namespace ExploreOOP.BusinessLayer.Entities
 {
     public class LineOfCreditAccount : BankAccount
     {
-        //Dependency Injection constructor
-        public LineOfCreditAccount(string name, decimal initialBalance, decimal creditLimit, IAuthorizationSystemService authorizationSystemService)
+      
+        public LineOfCreditAccount(string name, decimal initialBalance, decimal creditLimit, IAuthorizationSystemService? authorizationSystemService = null)
             : base(name, initialBalance, -creditLimit, authorizationSystemService)
-        {
-        }
-
-        //Dependency Non-Injection constructor
-        public LineOfCreditAccount(string name, decimal initialBalance, decimal creditLimit)
-            : base(name, initialBalance, -creditLimit, new AuthorizationSystemService())
         {
         }
 
