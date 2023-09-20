@@ -56,6 +56,26 @@ namespace ExploreOOP.PresentationLayer
 
                         break;
 
+                    case 3:
+                        Console.Write("Enter account id: ");
+                        var id = int.Parse(Console.ReadLine() ?? "0");
+
+                        l = lineOfCreditAccountService.Get(id);
+
+                        Console.WriteLine($"Account ID: {l.Number} Account {l.Owner} Balance {l.Balance}" );
+                        PrintPressToContinue();
+                        break;
+
+                    case 4:
+                        Console.Write("Enter account id: ");
+                        id = int.Parse(Console.ReadLine() ?? "0");
+
+                        lineOfCreditAccountService.Delete(id);
+
+                        Console.WriteLine($"Account {id} deleted" );
+                        PrintPressToContinue();
+                        break;
+
 
                 }
 
@@ -74,6 +94,10 @@ namespace ExploreOOP.PresentationLayer
             Console.WriteLine("     1 - List all Line of credit accounts");
             Console.WriteLine("");
             Console.WriteLine("     2 - Add a Line of credit account");
+            Console.WriteLine("");
+             Console.WriteLine("     3 - Find a line of credit account by ID");
+            Console.WriteLine("");
+            Console.WriteLine("     4 - Delete a line of credit account");
             Console.WriteLine("");
             Console.WriteLine("     0 - Exit program");
             Console.WriteLine("");

@@ -25,13 +25,23 @@ namespace ExploreOOP.PersistenceLayer
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var item = s_List.Find(x => int.Parse(x.Number) == id);
+            if (item == null)
+            {
+                throw new Exception($"No record for ID {id}");
+            }
+            s_List.Remove(item);
         }
 
-        public LineOfCreditAccount Get(int id)
+    public LineOfCreditAccount Get(int id)
+    {
+        var item = s_List.Find(x => int.Parse(x.Number) == id);
+        if (item == null)
         {
-            throw new NotImplementedException();
+            throw new Exception($"No record for ID {id}");
         }
+        return item;
+    }
 
         public List<LineOfCreditAccount> GetAll()
         {
