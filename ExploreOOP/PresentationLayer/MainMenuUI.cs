@@ -64,7 +64,7 @@ namespace ExploreOOP.PresentationLayer
                         Console.Write("Enter account id: ");
                         var id = int.Parse(Console.ReadLine() ?? "0");
 
-                        l = lineOfCreditAccountService.Get(id);
+                        var l = lineOfCreditAccountService.Get(id);
 
                         Console.WriteLine($"Account ID: {l.Number} Account {l.Owner} Balance {l.Balance}" );
                         PrintPressToContinue();
