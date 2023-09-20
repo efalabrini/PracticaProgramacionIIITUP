@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Practica2.Ej5
 {
-    internal class IVehiculo
+    interface IVehiculo
     {
+        protected void Conducir();
+        protected bool CargarCombustible(int cantidadInicialCombustible);
     }
 }
