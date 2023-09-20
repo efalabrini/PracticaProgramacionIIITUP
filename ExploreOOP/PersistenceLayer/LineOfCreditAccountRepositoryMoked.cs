@@ -25,12 +25,36 @@ namespace ExploreOOP.PersistenceLayer
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            string idDelete = id.ToString();
+
+            var account = s_List.FirstOrDefault(account => account.Number == idDelete);
+
+            if (account != null)
+            {
+                Console.WriteLine($"Cuenta con ID {idDelete} encontrada.");
+                s_List.Remove(account);
+            }
+            else
+            {
+                throw new ArgumentException($"No se encontró ninguna cuenta con ID {idDelete}.");
+            }
         }
 
         public LineOfCreditAccount Get(int id)
         {
-            throw new NotImplementedException();
+            string idGet = id.ToString();
+
+            var account = s_List.FirstOrDefault(account => account.Number == idGet);
+
+            if (account != null)
+            {
+                Console.WriteLine($"Cuenta con ID {idGet} encontrada.");
+                return account;
+            }
+            else
+            {
+                throw new ArgumentException($"No se encontró ninguna cuenta con ID {idGet}.");
+            }
         }
 
         public List<LineOfCreditAccount> GetAll()
