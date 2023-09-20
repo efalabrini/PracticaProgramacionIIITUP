@@ -4,20 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Practica2.ej5
+namespace Practica2.Ej5
 {
     public class Ej5
     {
         public void Ejecutar()
         {
-            coche c = new(0);
-
-            Console.WriteLine("cargue naftita ingrese num");
-            int epa = Int32.Parse(Console.ReadLine());
-
-            c.CargarCombustible(epa);
-
-            c.Conducir();
+            Coche miCoche = new Coche(0);
+            miCoche.Conducir();
+            miCoche.CargarCombustible(45);
+            miCoche.Conducir();
         }
     }
 }

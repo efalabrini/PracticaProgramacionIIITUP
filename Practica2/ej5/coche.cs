@@ -1,33 +1,45 @@
-﻿using System;
+﻿using Practica2.ej5;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Practica2.ej5
+namespace Practica2.Ej5
 {
-    internal class coche : IVehiculo
+    public class Coche : IVehiculo
     {
-        public int Gasolina { get; set; }
+        private int gasolina;
 
-        public coche(int gasolina)
+        public Coche(int gasolinaInicial)
         {
-            Gasolina = gasolina;
+            gasolina = gasolinaInicial;
         }
 
         public void Conducir()
         {
-            if (Gasolina > 0)
+            if (gasolina > 0)
             {
-                Console.WriteLine("el coche esta conduciendo");
+                Console.WriteLine("El coche está conduciendo.");
+            }
+            else
+            {
+                Console.WriteLine("El coche no puede conducir, no tiene gasolina.");
             }
         }
-
         public bool CargarCombustible(int cantidad)
         {
-            Gasolina = Gasolina + cantidad;
-
-            return true;
+            if (cantidad > 0)
+            {
+                gasolina += cantidad;
+                Console.WriteLine($"Se han cargado {cantidad} litros de gasolina. Gasolina total: {gasolina} litros.");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("La cantidad de gasolina a cargar debe ser mayor que 0.");
+                return false;
+            }
         }
     }
 }
