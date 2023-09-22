@@ -14,7 +14,7 @@ namespace ExploreOOP.PersistenceLayer
 
         public LineOfCreditAccountRepositoryMoked()
         {
-            s_List.Add(new LineOfCreditAccount("Cuenta 1",10,0));
+            s_List.Add(new LineOfCreditAccount("Cuenta 1", 10, 0));
             s_List.Add(new LineOfCreditAccount("Cuenta 2", 10, 0));
             s_List.Add(new LineOfCreditAccount("Cuenta 3", 10, 0));
         }
@@ -25,12 +25,22 @@ namespace ExploreOOP.PersistenceLayer
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var item = s_List.Find(x => int.Parse(x.Number) == id);
+            if (item == null)
+            {
+                throw new Exception($"No record for ID {id}");
+            }
+            s_List.Remove(item);
         }
 
         public LineOfCreditAccount Get(int id)
         {
-            throw new NotImplementedException();
+            var item = s_List.Find(x => int.Parse(x.Number) == id);
+            if (item == null)
+            {
+                throw new Exception($"No record for ID {id}");
+            }
+            return item;
         }
 
         public List<LineOfCreditAccount> GetAll()

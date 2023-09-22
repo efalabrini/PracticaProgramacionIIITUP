@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Practica2", "Practica2\Prac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExploreOOP", "ExploreOOP\ExploreOOP.csproj", "{98DC73F4-EDF6-4119-A6BE-265A14D585FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExploreOOPWebApi", "ExploreOOPWebApi\ExploreOOPWebApi.csproj", "{89865995-774D-464C-9FBB-BABF7E909562}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{98DC73F4-EDF6-4119-A6BE-265A14D585FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98DC73F4-EDF6-4119-A6BE-265A14D585FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98DC73F4-EDF6-4119-A6BE-265A14D585FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89865995-774D-464C-9FBB-BABF7E909562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89865995-774D-464C-9FBB-BABF7E909562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89865995-774D-464C-9FBB-BABF7E909562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89865995-774D-464C-9FBB-BABF7E909562}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
