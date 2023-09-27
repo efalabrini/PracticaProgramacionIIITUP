@@ -35,4 +35,9 @@ public class LineOfCreditAccountController : ControllerBase
         _lineOfCreditAccountService.Create(createLineOfCreditAccount);
     }
 
+    [HttpDelete("{id}")]
+    public void Delete(int id)
+    {
+        _lineOfCreditAccountService.Delete(id);
+    }
 }
