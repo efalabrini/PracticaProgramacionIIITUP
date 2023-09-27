@@ -8,10 +8,10 @@ namespace ExploreOOPWebApi.Controllers;
 [Route("[controller]")]
 public class LineOfCreditAccountController : ControllerBase
 {
-    private readonly ILogger<WeatherForecastController> _logger;
+    private readonly ILogger<LineOfCreditAccountController> _logger;
     private readonly ILineOfCreditAccountService _lineOfCreditAccountService;
 
-    public LineOfCreditAccountController(ILogger<WeatherForecastController> logger, ILineOfCreditAccountService lineOfCreditAccountService)
+    public LineOfCreditAccountController(ILogger<LineOfCreditAccountController> logger, ILineOfCreditAccountService lineOfCreditAccountService)
     {
         _logger = logger;
         _lineOfCreditAccountService = lineOfCreditAccountService;
@@ -35,4 +35,9 @@ public class LineOfCreditAccountController : ControllerBase
         _lineOfCreditAccountService.Create(createLineOfCreditAccount);
     }
 
+    [HttpDelete("{id}")]
+    public void Delete(int id)
+    {
+        _lineOfCreditAccountService.Delete(id);
+    }
 }
