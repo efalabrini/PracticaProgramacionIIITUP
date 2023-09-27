@@ -36,9 +36,17 @@ public class LineOfCreditAccountController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public void Delete(int id)
+    public IActionResult Delete(int id)
     {
-        _lineOfCreditAccountService.Delete(id);
+        try 
+        { 
+            _lineOfCreditAccountService.Delete(id);
+            return Ok();
+        }
+        catch
+        {
+            return NotFound();
+        }
     }
 
 }
