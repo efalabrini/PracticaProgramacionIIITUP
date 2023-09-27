@@ -10,8 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<ILineOfCreditAccountService,LineOfCreditAccountService>();
-builder.Services.AddScoped<ILineOfCreditAccountRepository,LineOfCreditAccountRepositoryMoked>();
+builder.Services.AddSingleton<ILineOfCreditAccountService,LineOfCreditAccountService>();
+builder.Services.AddSingleton<ILineOfCreditAccountRepository,LineOfCreditAccountRepositoryMoked>();
 
 
 var app = builder.Build();
